@@ -95,12 +95,14 @@ class minHeap {
         swapIndex = leftIndex
       }
       
-      // If the right item exists and smaller than the left
+      // If the right item exists and is smaller than the left AND is smaller than the current
       // (which is smaller than the current as we found out one step ago)
       // E.g. 21
       //     / \
       //    19 5
-      if (rightIndex !== null && swapIndex !== null && this.heap[rightIndex] < this.heap[leftIndex]) {
+      if (rightIndex !== null
+         && this.heap[rightIndex] < this.heap[leftIndex]
+         && this.heap[rightIndex] < this.heap[nodeIndex]) {
         swapIndex = rightIndex
       }
       
